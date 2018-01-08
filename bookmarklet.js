@@ -1,1 +1,1 @@
-javascript%3A+var+makeReadjs+%3D+document.createElement%28%27script%27%29%3B+makeReadjs.setAttribute%28%27src%27%2C+%27https%3A%2F%2Fraw.githubusercontent.com%2Fkiyunkim%2FmakeReadable%2Fmaster%2Fscript.js%27%29%3B+document.body.appendChild%28makeReadjs%29%3B
+javascript:%20(function%20()%20{var%20makeReadjs%20=%20document.createElement(%27script%27);makeReadjs.setAttribute(%27src%27,%20%27https://raw.githubusercontent.com/kiyunkim/makeReadable/master/script.js%27);document.body.appendChild(makeReadjs);}());
