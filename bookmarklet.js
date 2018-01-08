@@ -1,1 +1,1 @@
-javascript:%20(function%20()%20{var%20makeReadjs%20=%20document.createElement(%27script%27);makeReadjs.setAttribute(%27src%27,%20%27https://raw.githubusercontent.com/kiyunkim/makeReadable/master/script.js%27);document.body.appendChild(makeReadjs);}());
+javascript:%20(function%20()%20{var%20makeReadjs%20=%20document.createElement(%27script%27);makeReadjs.setAttribute(%27src%27,%20%27https://kiyunkim.github.io/makeReadable/script.js%27);document.body.appendChild(makeReadjs);}());
