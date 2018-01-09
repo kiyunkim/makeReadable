@@ -1,5 +1,4 @@
 (function(){
-  // from: https://www.smashingmagazine.com/2010/05/make-your-own-bookmarklets-with-jquery/#comments-make-your-own-bookmarklets-with-jquery
   // the minimum version of jQuery we want
   var v = "1.7.1";
 
