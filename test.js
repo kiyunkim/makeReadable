@@ -10,10 +10,10 @@ var makeReadablejs = (function(options) {
   
 
   function init() {
-
+/* 
     csslink.href = "https://kiyunkim.github.io/makeReadable/style.css";
-    csslink.rel = "stylesheet";
-    head.appendChild(csslink);
+    csslink.rel = "stylesheet"; */
+    head.appendChild(styleSheet);
 
   }
   proto.setup = function() {
