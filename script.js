@@ -20,7 +20,8 @@
 
   function initMyBookmarklet() {
     (window.myBookmarklet = function() {
-      // my code START
+
+      // --------------------- makeReadable.js START --------------------- 
       var makeReadablejs = (function(options) {
         var self = this,
             proto = makeReadablejs.prototype,
@@ -57,39 +58,20 @@
         css_path: 'https://kiyunkim.github.io/makeReadable/style.css'
       });
       makeReadable.setup();
-      // my code END
+      // --------------------- makeReadable.js END --------------------- 
+      
     })();
   }
 
 })();
 
 
+/* ---------------------- notes
 
+1. store cookie to remember user's inputs
 
-
-
-
-
-
-
-
-
-
-// store cookie to remember user's inputs
-
-/* for later - color picker
+2. color picker
 https://developer.mozilla.org/en-US/docs/Web/HTML/Element/input/color
 
-input is fired on the <input> element every time the color changes. The change event is fired when the user dismisses the color picker. 
-check with "value"
 
-colorPicker.addEventListener("input", updateFirst, false);
-colorPicker.addEventListener("change", watchColorPicker, false);
-
-function watchColorPicker(event) {
-  document.querySelectorAll("p").forEach(function(p) {
-    p.style.color = event.target.value;
-  });
-}
-
-*/
+  ---------------------- notes */
