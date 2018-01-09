@@ -1,38 +1,41 @@
-<!-- make draggable -->
-<div class="mR_container">
-  <fieldset>
-    <legend>Change colors</legend>
-    <p>Text color</p>
-    <input type="color" name="textcolor" value="#333333">
-  </fieldset>
+<div id="makeReadable_html">
   
-  <fieldset>
-    <legend>Change the text</legend>
-    <p>Elements to target</p>
-    <input type="checkbox" id="ptag">
-    <label for="ptag"><code>&lt;p&gt;</code></label>
-    <input type="checkbox" id="spantag">
-    <label for="spantag"><code>&lt;span&gt;</code></label>
-    <p>Font size:</p>
-    <input type="text" name="fontsize" value="16px">
-    <p>Font size:</p>
-    <input type="number" name="fontsize" min="0" max="300" step="1" value="16">
-    <p>Font family:</p>
-    <select name="fontfamily">
-      <option value="arial">Arial</option>
-      <option value="helvetica" selected>Helvetica</option>
-      <option value="times">Times</option>
-    </select>
-    <p>Font family:</p>
-    <input list="fontfamily">
-    <datalist id="fontfamily">
-      <option value="arial">
-      <option value="helvetica">
-      <option value="times">
-    </datalist>
-    <input type="submit" value="Submit">
-    <button type="button" onclick="console.log('clicked button')">Apply</button>
-  </fieldset>
+  <!-- make draggable -->
+  <div class="mR_container">
+    <fieldset>
+      <legend>Change colors</legend>
+      <p>Text color</p>
+      <input type="color" name="textcolor" value="#333333">
+    </fieldset>
+    
+    <fieldset>
+      <legend>Change the text</legend>
+      <p>Elements to target</p>
+      <input type="checkbox" id="ptag">
+      <label for="ptag"><code>&lt;p&gt;</code></label>
+      <input type="checkbox" id="spantag">
+      <label for="spantag"><code>&lt;span&gt;</code></label>
+      <p>Font size:</p>
+      <input type="text" name="fontsize" value="16px">
+      <p>Font size:</p>
+      <input type="number" name="fontsize" min="0" max="300" step="1" value="16">
+      <p>Font family:</p>
+      <select name="fontfamily">
+        <option value="arial">Arial</option>
+        <option value="helvetica" selected>Helvetica</option>
+        <option value="times">Times</option>
+      </select>
+      <p>Font family:</p>
+      <input list="fontfamily">
+      <datalist id="fontfamily">
+        <option value="arial">
+        <option value="helvetica">
+        <option value="times">
+      </datalist>
+      <input type="submit" value="Submit">
+      <button type="button" onclick="console.log('clicked button')">Apply</button>
+    </fieldset>
 
-  <!-- maybe add custom css input with <textarea> -->
+    <!-- maybe add custom css input with <textarea> -->
+  </div>
 </div>
