@@ -2,10 +2,15 @@
 @import url('https://fonts.googleapis.com/css?family=Roboto');
 
 $fontfamily: 'Roboto', arial, helvetica, sans-serif;
+$background: #fff;
 
 #makeReadable_html {
+  background-color: $background;
   font-family: $fontfamily;
-
+  position: fixed;
+  left: 0;
+  top: 5vh;
+  z-index: 999999999;
 
 
 

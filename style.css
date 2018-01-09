@@ -1,5 +1,10 @@
 @import url("https://fonts.googleapis.com/css?family=Roboto");
 #makeReadable_html {
+  background-color: #fff;
   font-family: "Roboto", arial, helvetica, sans-serif;
+  position: fixed;
+  left: 0;
+  top: 5vh;
+  z-index: 999999999;
 }
 /*# sourceMappingURL=style.css.map */
