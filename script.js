@@ -1,23 +1,80 @@
-var makeReadablejs = (function(options) {
-  var self = this,
-      proto = makeReadablejs.prototype,
-      
-      fontFamily;
+(function(){
+  // from: https://www.smashingmagazine.com/2010/05/make-your-own-bookmarklets-with-jquery/#comments-make-your-own-bookmarklets-with-jquery
+  // the minimum version of jQuery we want
+  var v = "1.7.1";
 
-  function init() {
-    
-
+  // check prior inclusion and version
+  if (window.jQuery === undefined || window.jQuery.fn.jquery < v) {
+    var done = false;
+    var script = document.createElement("script");
+    script.src = "http://ajax.googleapis.com/ajax/libs/jquery/" + v + "/jquery.min.js";
+    script.onload = script.onreadystatechange = function(){
+      if (!done && (!this.readyState || this.readyState == "loaded" || this.readyState == "complete")) {
+        done = true;
+        initMyBookmarklet();
+      }
+    };
+    document.getElementsByTagName("body")[0].appendChild(script);
+  } else {
+    initMyBookmarklet();
   }
-  proto.setup = function() {
-    
-  };
-  return {
-    setup: self.setup
-  };
-});
 
-var makeReadable = new makeReadablejs();
-makeReadable.setup();
+  function initMyBookmarklet() {
+    (window.myBookmarklet = function() {
+      // my code START
+      var makeReadablejs = (function(options) {
+        var self = this,
+            proto = makeReadablejs.prototype,
+            
+            head = document.getElementsByTagName('head')[0],
+            body = document.getElementsByTagName('body')[0],
+            css_link = document.createElement('link'),
+            html_path = options.html_path,
+            css_path = options.css_path,
+            fontFamily;
+      
+        
+      
+        function init() {
+          css_link.href = css_path;
+          css_link.rel = 'stylesheet';
+          head.append(css_link);
+          
+          
+          $.get(html_path, function (data) {
+            $(body).append(data);
+          });
+        }
+        proto.setup = function() {
+          init();
+        };
+        return {
+          setup: self.setup
+        };
+      });
+      
+      var makeReadable = new makeReadablejs({
+        html_path: 'https://kiyunkim.github.io/makeReadable/init.html',
+        css_path: 'https://kiyunkim.github.io/makeReadable/style.css'
+      });
+      makeReadable.setup();
+      // my code END
+    })();
+  }
+
+})();
+
+
+
+
+
+
+
+
+
+
+
+
 
 // store cookie to remember user's inputs
 
