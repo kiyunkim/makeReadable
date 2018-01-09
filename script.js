@@ -22,6 +22,8 @@ makeReadable.setup();
 // store cookie to remember user's inputs
 
 /* for later - color picker
+https://developer.mozilla.org/en-US/docs/Web/HTML/Element/input/color
+
 input is fired on the <input> element every time the color changes. The change event is fired when the user dismisses the color picker. 
 check with "value"
 
