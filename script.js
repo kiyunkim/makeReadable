@@ -4,11 +4,12 @@ var makeReadablejs = (function(options) {
       
       fontFamily;
 
-  function changeFont() {
+  function init() {
+    
 
   }
   proto.setup = function() {
-    $('body').addClass('test');
+    
   };
   return {
     setup: self.setup
