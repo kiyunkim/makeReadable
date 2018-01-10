@@ -66,7 +66,7 @@
 
 /* ---------------------- notes
 
-1. store cookie to remember user's inputs
+1. store remember user's inputs into local or session storage
 
 2. color picker
 https://developer.mozilla.org/en-US/docs/Web/HTML/Element/input/color
