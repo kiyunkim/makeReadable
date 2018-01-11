@@ -47,25 +47,25 @@
       }
 
       function readVal() {
-        
-          textVal = $(textInput).val();
-          console.log(textInput);
-          console.log(textVal);
+        console.log('readval running');
+        textVal = $(textInput).val();
+        console.log(textInput);
+        console.log(textVal);
         
       }
 
       function submit() {
-        console.log('sldkfjsdf');
+        console.log('submit running');
         readVal();
       }
 
       $(submitButton).click(function() {
+        console.log('submit button clicked');
         submit();
-      })
+      });
 
       proto.setup = function() {
         init();
-        submit();
       };
       return {
         setup: self.setup
