@@ -1,3 +1,4 @@
+"use strict";
 (function(){
   // the minimum version of jQuery we want
   var v = "1.7.1";
@@ -31,19 +32,38 @@
           css_link = document.createElement('link'),
           html_path = options.html_path,
           css_path = options.css_path,
-          fontFamily;
+          mR_wrapper = options.mR_wrapper,
+          submitButton = options.submitButton,
+          textInput = options.textInput,
+          textVal;
     
       function init() {
         css_link.href = css_path;
         css_link.rel = 'stylesheet';
-        head.append(css_link);
-        
+        head.append(css_link); // insert stylesheet
         $.get(html_path, function (data) {
-          $(body).append(data);
+          $(body).append(data); // insert widget
+        });
+      }
+
+      function readVal() {
+        
+          textVal = $(textInput).val();
+          console.log(textInput);
+          console.log(textVal);
+        
+      }
+
+      function submit() {
+        console.log(mR_wrapper+' '+submitButton)
+        $(submitButton).click(function() {
+          console.log('sldkfjsdf')
+          readVal();
         });
       }
       proto.setup = function() {
         init();
+        submit();
       };
       return {
         setup: self.setup
@@ -52,9 +72,11 @@
     
     var makeReadable = new makeReadablejs({
       html_path: 'https://kiyunkim.github.io/makeReadable/init.html',
-        // file:///Users/kimk/Documents/GitHub/kiyunkim.github.io/makeReadable/init.html
-      css_path: 'https://kiyunkim.github.io/makeReadable/style.css'
+      css_path: 'https://kiyunkim.github.io/makeReadable/style.css',
         // file:///Users/kimk/Documents/GitHub/kiyunkim.github.io/makeReadable/style.css
+      mR_wrapper: '#makeReadable_html',
+      submitButton: 'button',
+      textInput: 'input[type=text]'
     });
     makeReadable.setup();
     // --------------------- makeReadable.js END --------------------- 
