@@ -12,18 +12,22 @@ var makeReadablejs = (function(options) {
   }
 
   function readVal() {
-    console.log('readval running');
-
-    textVal = $(textInput).val();
-    console.log(textInput);
-    console.log(textVal);
+    $(textInput).each(function(i) {
+      textVal = $(this).val();
+      // console.log(i+': '+textInput);
+      console.log(i+': '+textVal);
+    });
+   
     
   }
 
   function submit() {
     console.log('submit running');
 
-    $(submitButton).click(function() {
+    $('.mR_container').on('click','button',function(){ // will work on buttons that are added dynamically even after this function
+      console.log('hi')
+    });
+    $('button').click(function() { // works only on buttons that have already been loaded
       console.log('submit button clicked');
       readVal();
     });
