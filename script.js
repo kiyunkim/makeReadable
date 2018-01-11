@@ -33,7 +33,7 @@
           html_path = options.html_path,
           css_path = options.css_path,
           mR_wrapper = options.mR_wrapper,
-          submitButton = mR_wrapper+' '+options.submitButton,
+          submitButton = options.submitButton,
           textInput = options.textInput,
           textVal;
     
@@ -42,12 +42,13 @@
         css_link.rel = 'stylesheet';
         head.append(css_link); // insert stylesheet
         $.get(html_path, function (data) {
-          $(body).append(data); // insert widget
+          $(body).prepend(data); // insert widget
         });
       }
 
       function readVal() {
         console.log('readval running');
+
         textVal = $(textInput).val();
         console.log(textInput);
         console.log(textVal);
