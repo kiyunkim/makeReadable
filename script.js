@@ -33,7 +33,7 @@
           html_path = options.html_path,
           css_path = options.css_path,
           mR_wrapper = options.mR_wrapper,
-          submitButton = options.submitButton,
+          submitButton = mR_wrapper+' '+options.submitButton,
           textInput = options.textInput,
           textVal;
     
@@ -55,12 +55,14 @@
       }
 
       function submit() {
-        console.log(mR_wrapper+' '+submitButton)
-        $(submitButton).click(function() {
-          console.log('sldkfjsdf')
-          readVal();
-        });
+        console.log('sldkfjsdf');
+        readVal();
       }
+
+      $(submitButton).click(function() {
+        submit();
+      })
+
       proto.setup = function() {
         init();
         submit();
