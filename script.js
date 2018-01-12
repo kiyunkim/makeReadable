@@ -21,50 +21,38 @@
   }
 
   function initMyBookmarklet() {
-    //(window.myBookmarklet = function() {
     // --------------------- makeReadable.js START --------------------- 
-    var makeReadablejs = (function(options) {
+    var makeReadableBookmarklet = (function(options) {
       var self = this,
-          proto = makeReadablejs.prototype,
+          proto = makeReadableBookmarklet.prototype,
           
           head = document.getElementsByTagName('head')[0],
           body = document.getElementsByTagName('body')[0],
           css_link = document.createElement('link'),
+          js_script = document.createElement('script'),
           html_path = options.html_path,
           css_path = options.css_path,
-          mR_wrapper = options.mR_wrapper,
-          submitButton = options.submitButton,
-          textInput = options.textInput,
-          textVal;
-    
-      function init() {
+          js_path = options.js_path;
+      
+      function loadCSS() {
         css_link.href = css_path;
         css_link.rel = 'stylesheet';
         head.append(css_link); // insert stylesheet
+      }
+      function loadHTML() {
         $.get(html_path, function (data) {
-          $(body).prepend(data); // insert widget
+          $(body).prepend(data); // insert widget html
         });
       }
-
-      function readVal() {
-        console.log('readval running');
-
-        textVal = $(textInput).val();
-        console.log(textInput);
-        console.log(textVal);
-        
+      function loadJS() {
+        js_script.src = js_path;
+        body.append(js_script); // insert js 
       }
-
-      function submit() {
-        console.log('submit running');
-        readVal();
+      function init() {
+        loadCSS();
+        loadHTML();
+        loadJS();
       }
-
-      $(submitButton).click(function() {
-        console.log('submit button clicked');
-        submit();
-      });
-
       proto.setup = function() {
         init();
       };
@@ -73,28 +61,14 @@
       };
     });
     
-    var makeReadable = new makeReadablejs({
+    var appendMakeReadable = new makeReadableBookmarklet({
+      // file:///Users/kimk/Documents/GitHub/kiyunkim.github.io/ ...
       html_path: 'https://kiyunkim.github.io/makeReadable/init.html',
       css_path: 'https://kiyunkim.github.io/makeReadable/style.css',
-        // file:///Users/kimk/Documents/GitHub/kiyunkim.github.io/makeReadable/style.css
-      mR_wrapper: '#makeReadable_html',
-      submitButton: 'button',
-      textInput: 'input[type=text]'
+      js_path: 'https://kiyunkim.github.io/makeReadable/widget.js'
     });
-    makeReadable.setup();
+    appendMakeReadable.setup();
     // --------------------- makeReadable.js END --------------------- 
-    //})();
   }
 
 })();
-
-
-/* ---------------------- notes
-
-1. store remember user's inputs into local or session storage
-
-2. color picker
-https://developer.mozilla.org/en-US/docs/Web/HTML/Element/input/color
-
-
-  ---------------------- notes */
