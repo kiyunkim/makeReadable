@@ -28,6 +28,7 @@ var makeReadablejs = (function(options) {
   function getElements() {
     $checkedElement = $(elementOption).filter(':checked');
     if ($checkedElement.length > 0) {
+      $(errorClass).html('');
       $checkedElement.each(function(i) {
         selectors = $(this).attr('data-property');
       });
@@ -43,9 +44,8 @@ var makeReadablejs = (function(options) {
   function submit() {
     $(submitButton).click(function() { 
       readVal(); // read updated values if they aren't empty
-      getElements();
-      //console.log($this)
-      // get elements to apply styles to
+      getElements(); // get elements to apply styles to
+      
       // pair property w index
       // pair property and values
       // apply css
@@ -67,7 +67,7 @@ var makeReadable = new makeReadablejs({
   textInput: 'input[value]',
   elementOption: 'input[type=checkbox]',
   errorClass: '.error',
-  errorText: 'Please choose target.'
+  errorText: 'Please choose a target.'
 });
 makeReadable.setup();
 
