@@ -6,4 +6,6 @@ Bookmarklet to make text on a web page more readable by customizing the font siz
 
 - [Bookmarklet Creator](https://mrcoles.com/bookmarklet/)
 - [Beautify js](http://jsbeautifier.org/)
-- [Sparkbox media query bookmarklet](https://github.com/sparkbox/mediaQueryBookmarklet)
+- [mediaQuery Bookmarklet](https://github.com/sparkbox/mediaQueryBookmarklet)
+- [JS to Bookmarklet](http://js.do/blog/bookmarklets/)
+- [Make Your Own Bookmarklets with jQuery](https://www.smashingmagazine.com/2010/05/make-your-own-bookmarklets-with-jquery/)

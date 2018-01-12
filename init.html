@@ -1,6 +1,5 @@
 <div id="makeReadable_html">
-  
-  <!-- make draggable -->
+  <p class="mR_toggle">Hide</p>
   <div class="mR_container">
     <fieldset>
       <legend>Change colors</legend>
@@ -16,9 +15,9 @@
       <input type="checkbox" id="spantag">
       <label for="spantag"><code>&lt;span&gt;</code></label>
       <p>Font size:</p>
-      <input type="text" name="fontsize" value="16px">
-      <p>Font size:</p>
-      <input type="number" name="fontsize" min="0" max="300" step="1" value="16">
+      <input type="text" name="fontsize" placeholder="16px" value="">
+      <p>Line height:</p>
+      <input type="number" name="fontsize" min="0" max="30" step=".1" value="">
       <p>Font family:</p>
       <select name="fontfamily">
         <option value="arial">Arial</option>
@@ -32,8 +31,8 @@
         <option value="helvetica">
         <option value="times">
       </datalist>
-      <input type="submit" value="Submit">
-      <button type="button" onclick="console.log('clicked button')">Apply</button>
+      
+      <button type="button">Apply</button>
     </fieldset>
 
     <!-- maybe add custom css input with <textarea> -->
