@@ -5,6 +5,7 @@ var makeReadablejs = (function(options) {
       mR_wrapper = options.mR_wrapper,
       submitButton = options.submitButton,
       textInput = options.textInput,
+      dataProperty,
       textVal;
 
   function init() {
@@ -13,16 +14,24 @@ var makeReadablejs = (function(options) {
   function readVal() {
     $(textInput).each(function(i) {
       textVal = $(this).val();
-      // console.log(i+': '+textInput);
-      console.log(i+': '+textVal);
+      dataProperty = $(this).attr('data-property');
+      if (textVal != "") {
+        console.log(i+': '+dataProperty+'   '+textVal);
+      }
     });
    
   }
 
+  function assignCSS(selector, value) {
+    $(selector).css()
+  }
+
   function submit() {
-    $('button').click(function() { // works only on buttons that have already been loaded
-      console.log('submit button clicked');
-      readVal();
+    $(submitButton).click(function() { 
+      readVal(); // read updated values if they aren't empty
+      // pair property w index
+      // pair property and values
+      // apply css
     });
   }
 
@@ -50,5 +59,4 @@ makeReadable.setup();
 2. color picker
 https://developer.mozilla.org/en-US/docs/Web/HTML/Element/input/color
 
-
-  ---------------------- notes */
+---------------------- notes */

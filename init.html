@@ -4,7 +4,7 @@
     <fieldset>
       <legend>Change colors</legend>
       <p>Text color</p>
-      <input type="color" name="textcolor" value="#333333">
+      <input type="color" data-property="color" name="textcolor" value="#333333">
     </fieldset>
     
     <fieldset>
@@ -14,16 +14,20 @@
       <label for="ptag"><code>&lt;p&gt;</code></label>
       <input type="checkbox" id="spantag">
       <label for="spantag"><code>&lt;span&gt;</code></label>
+
       <p>Font size:</p>
-      <input type="text" name="fontsize" placeholder="16px" value="">
+      <input type="text" name="fontsize" placeholder="16px" data-property="font-size" value="">
+
       <p>Line height:</p>
       <input type="number" name="fontsize" min="0" max="30" step=".1" value="">
+
       <p>Font family:</p>
       <select name="fontfamily">
         <option value="arial">Arial</option>
         <option value="helvetica" selected>Helvetica</option>
         <option value="times">Times</option>
       </select>
+
       <p>Font family:</p>
       <input list="fontfamily">
       <datalist id="fontfamily">
@@ -31,7 +35,7 @@
         <option value="helvetica">
         <option value="times">
       </datalist>
-      
+
       <button type="button">Apply</button>
     </fieldset>
 
