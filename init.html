@@ -3,23 +3,24 @@
   <div class="mR_container">
     <fieldset>
       <legend>Change colors</legend>
-      <p>Text color</p>
-      <input type="color" data-property="color" name="textcolor" value="#333333">
     </fieldset>
     
     <fieldset>
       <legend>Change the text</legend>
       <p>Elements to target</p>
-      <input type="checkbox" id="ptag">
+      <input type="checkbox" id="ptag" data-property="p">
       <label for="ptag"><code>&lt;p&gt;</code></label>
-      <input type="checkbox" id="spantag">
+      <input type="checkbox" id="spantag" data-property="span">
       <label for="spantag"><code>&lt;span&gt;</code></label>
 
+      <p>Text color</p>
+      <input type="color" data-property="color" name="color" value="#333333">
+
       <p>Font size:</p>
-      <input type="text" name="fontsize" placeholder="16px" data-property="font-size" value="">
+      <input type="text" name="fontsize" data-property="font-size" placeholder="16px" value="">
 
       <p>Line height:</p>
-      <input type="number" name="fontsize" min="0" max="30" step=".1" value="">
+      <input type="number" name="lineheight" data-property="line-height" min="0" max="30" step=".1" value="">
 
       <p>Font family:</p>
       <select name="fontfamily">
