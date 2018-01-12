@@ -5,6 +5,10 @@ var makeReadablejs = (function(options) {
       mR_wrapper = options.mR_wrapper,
       submitButton = options.submitButton,
       textInput = options.textInput,
+      elementOption = options.elementOption,
+      errorClass = options.errorClass,
+      errorText = options.errorText,
+      selectors,
       dataProperty,
       textVal;
 
@@ -19,7 +23,17 @@ var makeReadablejs = (function(options) {
         console.log(i+': '+dataProperty+'   '+textVal);
       }
     });
-   
+  }
+
+  function getElements() {
+    $checkedElement = $(elementOption).filter(':checked');
+    if ($checkedElement.length > 0) {
+      $checkedElement.each(function(i) {
+        selectors = $(this).attr('data-property');
+      });
+    } else {
+      $(errorClass).html(errorText);
+    }
   }
 
   function assignCSS(selector, value) {
@@ -29,6 +43,9 @@ var makeReadablejs = (function(options) {
   function submit() {
     $(submitButton).click(function() { 
       readVal(); // read updated values if they aren't empty
+      getElements();
+      //console.log($this)
+      // get elements to apply styles to
       // pair property w index
       // pair property and values
       // apply css
@@ -47,7 +64,10 @@ var makeReadablejs = (function(options) {
 var makeReadable = new makeReadablejs({
   mR_wrapper: '#makeReadable_html',
   submitButton: 'button',
-  textInput: 'input[value]'
+  textInput: 'input[value]',
+  elementOption: 'input[type=checkbox]',
+  errorClass: '.error',
+  errorText: 'Please choose target.'
 });
 makeReadable.setup();
 
