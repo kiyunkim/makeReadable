@@ -21,7 +21,6 @@
   }
 
   function initMyBookmarklet() {
-    //(window.myBookmarklet = function() {
     // --------------------- makeReadable.js START --------------------- 
     var makeReadablejs = (function(options) {
       var self = this,
@@ -44,26 +43,13 @@
         $.get(html_path, function (data) {
           $(body).prepend(data); // insert widget
         });
+
+
+        $(mR_wrapper).on('click', 'button', function() {
+          console.log('submit button clicked');
+          submit();
+        });
       }
-
-      function readVal() {
-        console.log('readval running');
-
-        textVal = $(textInput).val();
-        console.log(textInput);
-        console.log(textVal);
-        
-      }
-
-      function submit() {
-        console.log('submit running');
-        readVal();
-      }
-
-      $(submitButton).click(function() {
-        console.log('submit button clicked');
-        submit();
-      });
 
       proto.setup = function() {
         init();
@@ -83,9 +69,7 @@
     });
     makeReadable.setup();
     // --------------------- makeReadable.js END --------------------- 
-    //})();
   }
-
 })();
 
 
