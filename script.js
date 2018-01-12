@@ -65,7 +65,7 @@
       // file:///Users/kimk/Documents/GitHub/kiyunkim.github.io/ ...
       html_path: 'https://kiyunkim.github.io/makeReadable/init.html',
       css_path: 'https://kiyunkim.github.io/makeReadable/style.css',
-      js_path: 'file:///Users/kimk/Documents/GitHub/kiyunkim.github.io/makeReadable/widget.js'
+      js_path: 'https://kiyunkim.github.io/makeReadable/widget.js'
     });
     appendMakeReadable.setup();
     // --------------------- makeReadable.js END --------------------- 
