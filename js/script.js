@@ -64,8 +64,8 @@
     var appendMakeReadable = new makeReadableBookmarklet({
       // file:///Users/kimk/Documents/GitHub/kiyunkim.github.io/ ...
       html_path: 'https://kiyunkim.github.io/makeReadable/init.html',
-      css_path: 'https://kiyunkim.github.io/makeReadable/style.css',
-      js_path: 'https://kiyunkim.github.io/makeReadable/widget.js'
+      css_path: 'https://kiyunkim.github.io/makeReadable/css/style.css',
+      js_path: 'https://kiyunkim.github.io/makeReadable/js/widget.js'
     });
     appendMakeReadable.setup();
     // --------------------- makeReadable.js END --------------------- 
