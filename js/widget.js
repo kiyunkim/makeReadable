@@ -1,3 +1,4 @@
+"use strict";
 var makeReadablejs = (function(options) {
   var self = this,
       proto = makeReadablejs.prototype,
@@ -26,7 +27,7 @@ var makeReadablejs = (function(options) {
   }
 
   function getElements() {
-    $checkedElement = $(elementOption).filter(':checked');
+    var $checkedElement = $(elementOption).filter(':checked');
     if ($checkedElement.length > 0) {
       $(errorClass).html('');
       $checkedElement.each(function(i) {
@@ -45,7 +46,7 @@ var makeReadablejs = (function(options) {
     $(submitButton).click(function() { 
       readVal(); // read updated values if they aren't empty
       getElements(); // get elements to apply styles to
-      
+      console.log(selectors)
       // pair property w index
       // pair property and values
       // apply css
